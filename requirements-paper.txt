@@ -1,0 +1,4 @@
+matplotlib==3.10.5
+pdfplumber==0.11.7
+pypdf==6.0.0
+reportlab==4.4.3

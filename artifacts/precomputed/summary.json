@@ -1,0 +1,373 @@
+{
+  "seed": 20260812,
+  "quick": false,
+  "protocol": "full",
+  "events": {
+    "legitimate": 28000,
+    "known_attack": 1732,
+    "adaptive_reference_attack": 803,
+    "held_out_attack": 580,
+    "corpus_attack_prevalence": 0.10011248593925759
+  },
+  "attack_atlas": {
+    "vectors": 32,
+    "executable_archetypes": 8,
+    "families": 8,
+    "channels": 8,
+    "rails": 5
+  },
+  "strategy_metrics": {
+    "contextual_bandit": {
+      "mean_reward": 1.579432351302302,
+      "total_approved_value": 40310.53598253173,
+      "mean_detection_rate": 0.7534722222222222,
+      "validity_rate": 1.0,
+      "novel_evasions": 3,
+      "families_explored": 6,
+      "top_quartile_reward": 1.9797470505617147,
+      "mean_reward_decomposition": {
+        "value_term": 1.1197371106258815,
+        "evasion_term": 0.6163194444444444,
+        "detection_cost_term": -0.12055555555555555,
+        "resource_cost_term": -0.030000000000000002,
+        "novelty_term": 0.008333333333333335,
+        "validity_term": 0.0,
+        "pre_fidelity_reward": 1.5938343328481037
+      },
+      "mean_fidelity_multiplier": 0.9772412530396769
+    },
+    "contextual_bandit_no_novelty": {
+      "mean_reward": 1.3550381938532132,
+      "total_approved_value": 34736.68905939502,
+      "mean_detection_rate": 0.7766203703703703,
+      "validity_rate": 1.0,
+      "novel_evasions": 5,
+      "families_explored": 6,
+      "top_quartile_reward": 1.4629378542081621,
+      "mean_reward_decomposition": {
+        "value_term": 0.9649080294276394,
+        "evasion_term": 0.558449074074074,
+        "detection_cost_term": -0.12425925925925924,
+        "resource_cost_term": -0.030000000000000002,
+        "novelty_term": 0.0,
+        "validity_term": 0.0,
+        "pre_fidelity_reward": 1.3690978442424542
+      },
+      "mean_fidelity_multiplier": 0.9729584916894688
+    },
+    "random": {
+      "mean_reward": 0.3030698090490924,
+      "total_approved_value": 9555.846420195234,
+      "mean_detection_rate": 0.9293981481481483,
+      "validity_rate": 1.0,
+      "novel_evasions": 15,
+      "families_explored": 6,
+      "top_quartile_reward": 0.48084513269041085,
+      "mean_reward_decomposition": {
+        "value_term": 0.2654401783387565,
+        "evasion_term": 0.17650462962962962,
+        "detection_cost_term": -0.1487037037037037,
+        "resource_cost_term": -0.030000000000000002,
+        "novelty_term": 0.04166666666666667,
+        "validity_term": 0.0,
+        "pre_fidelity_reward": 0.3049077709313491
+      },
+      "mean_fidelity_multiplier": 0.9299851811033043
+    },
+    "rule_mutation": {
+      "mean_reward": 1.561628069908565,
+      "total_approved_value": 36290.031830912834,
+      "mean_detection_rate": 0.7581018518518519,
+      "validity_rate": 1.0,
+      "novel_evasions": 40,
+      "families_explored": 5,
+      "top_quartile_reward": 2.264036120696759,
+      "mean_reward_decomposition": {
+        "value_term": 1.0080564397475789,
+        "evasion_term": 0.6047453703703705,
+        "detection_cost_term": -0.1212962962962963,
+        "resource_cost_term": -0.030000000000000002,
+        "novelty_term": 0.1111111111111111,
+        "validity_term": 0.0,
+        "pre_fidelity_reward": 1.5726166249327642
+      },
+      "mean_fidelity_multiplier": 0.9745949519170165
+    }
+  },
+  "reward_ablation": {
+    "novelty_on_mean_reward": 1.579432351302302,
+    "novelty_off_mean_reward": 1.3550381938532132,
+    "absolute_difference": 0.22439415744908886,
+    "relative_difference": 0.16559987642193114
+  },
+  "defender": {
+    "v0_known": {
+      "roc_auc": 1.0,
+      "pr_auc": 1.0,
+      "precision": 0.892271662763466,
+      "recall": 1.0,
+      "f1": 0.943069306930693,
+      "legitimate_fpr": 0.008214285714285714,
+      "fraud_value_detection_rate": 1.0,
+      "threshold": 0.1383436210598663,
+      "n_events": 5981
+    },
+    "v0_held_out": {
+      "roc_auc": 0.9886089901477833,
+      "pr_auc": 0.9605931747446147,
+      "precision": 0.9188712522045855,
+      "recall": 0.8982758620689655,
+      "f1": 0.9084568439407149,
+      "legitimate_fpr": 0.008214285714285714,
+      "fraud_value_detection_rate": 0.9794438061353719,
+      "threshold": 0.1383436210598663,
+      "n_events": 6180
+    },
+    "v1_known": {
+      "roc_auc": 1.0,
+      "pr_auc": 1.0,
+      "precision": 0.8639455782312925,
+      "recall": 1.0,
+      "f1": 0.927007299270073,
+      "legitimate_fpr": 0.010714285714285714,
+      "fraud_value_detection_rate": 1.0,
+      "threshold": 0.136562911478622,
+      "n_events": 5981
+    },
+    "v1_held_out": {
+      "roc_auc": 0.9961299261083744,
+      "pr_auc": 0.9881487162050309,
+      "precision": 0.904,
+      "recall": 0.9741379310344828,
+      "f1": 0.9377593360995851,
+      "legitimate_fpr": 0.010714285714285714,
+      "fraud_value_detection_rate": 0.9991914765478369,
+      "threshold": 0.136562911478622,
+      "n_events": 6180
+    },
+    "v2_known": {
+      "roc_auc": 1.0,
+      "pr_auc": 1.0,
+      "precision": 0.8581081081081081,
+      "recall": 1.0,
+      "f1": 0.9236363636363636,
+      "legitimate_fpr": 0.01125,
+      "fraud_value_detection_rate": 1.0,
+      "threshold": 0.13869258984640528,
+      "n_events": 5981
+    },
+    "v2_held_out": {
+      "roc_auc": 0.9997863300492611,
+      "pr_auc": 0.9990288080885279,
+      "precision": 0.9017160686427457,
+      "recall": 0.996551724137931,
+      "f1": 0.9467649467649467,
+      "legitimate_fpr": 0.01125,
+      "fraud_value_detection_rate": 0.9998247502018229,
+      "threshold": 0.13869258984640528,
+      "n_events": 6180
+    },
+    "fresh_attacker_approved_value_v0": 59951.774703230054,
+    "fresh_attacker_approved_value_v1": 266.98343458171496,
+    "fresh_attacker_approved_value_v2": 0.0,
+    "fresh_attacker_value_reduction": 0.9955466967257713,
+    "fresh_attacker_value_reduction_v1_to_v2": 1.0,
+    "fresh_attacker_value_reduction_v0_to_v2": 1.0,
+    "generations": {
+      "V0": {
+        "known": {
+          "roc_auc": 1.0,
+          "pr_auc": 1.0,
+          "precision": 0.892271662763466,
+          "recall": 1.0,
+          "f1": 0.943069306930693,
+          "legitimate_fpr": 0.008214285714285714,
+          "fraud_value_detection_rate": 1.0,
+          "threshold": 0.1383436210598663,
+          "n_events": 5981
+        },
+        "held_out": {
+          "roc_auc": 0.9886089901477833,
+          "pr_auc": 0.9605931747446147,
+          "precision": 0.9188712522045855,
+          "recall": 0.8982758620689655,
+          "f1": 0.9084568439407149,
+          "legitimate_fpr": 0.008214285714285714,
+          "fraud_value_detection_rate": 0.9794438061353719,
+          "threshold": 0.1383436210598663,
+          "n_events": 6180
+        },
+        "fresh_attacker_approved_value": 59951.774703230054,
+        "fresh_attacker_mean_reward": 2.3372259243849975,
+        "fresh_attacker_mean_detection_rate": 0.6747685185185185,
+        "calibration": {
+          "source": "legitimate_validation_temporal_60_80pct",
+          "legitimate_rows": 5600,
+          "target_fpr": 0.01,
+          "empirical_validation_fpr": 0.01,
+          "threshold": 0.1383436210598663
+        }
+      },
+      "V1": {
+        "known": {
+          "roc_auc": 1.0,
+          "pr_auc": 1.0,
+          "precision": 0.8639455782312925,
+          "recall": 1.0,
+          "f1": 0.927007299270073,
+          "legitimate_fpr": 0.010714285714285714,
+          "fraud_value_detection_rate": 1.0,
+          "threshold": 0.136562911478622,
+          "n_events": 5981
+        },
+        "held_out": {
+          "roc_auc": 0.9961299261083744,
+          "pr_auc": 0.9881487162050309,
+          "precision": 0.904,
+          "recall": 0.9741379310344828,
+          "f1": 0.9377593360995851,
+          "legitimate_fpr": 0.010714285714285714,
+          "fraud_value_detection_rate": 0.9991914765478369,
+          "threshold": 0.136562911478622,
+          "n_events": 6180
+        },
+        "fresh_attacker_approved_value": 266.98343458171496,
+        "fresh_attacker_mean_reward": -0.1550297486038679,
+        "fresh_attacker_mean_detection_rate": 0.9965277777777778,
+        "calibration": {
+          "source": "legitimate_validation_temporal_60_80pct",
+          "legitimate_rows": 5600,
+          "target_fpr": 0.01,
+          "empirical_validation_fpr": 0.01,
+          "threshold": 0.136562911478622
+        },
+        "fresh_value_reduction_vs_prior": 0.9955466967257713
+      },
+      "V2": {
+        "known": {
+          "roc_auc": 1.0,
+          "pr_auc": 1.0,
+          "precision": 0.8581081081081081,
+          "recall": 1.0,
+          "f1": 0.9236363636363636,
+          "legitimate_fpr": 0.01125,
+          "fraud_value_detection_rate": 1.0,
+          "threshold": 0.13869258984640528,
+          "n_events": 5981
+        },
+        "held_out": {
+          "roc_auc": 0.9997863300492611,
+          "pr_auc": 0.9990288080885279,
+          "precision": 0.9017160686427457,
+          "recall": 0.996551724137931,
+          "f1": 0.9467649467649467,
+          "legitimate_fpr": 0.01125,
+          "fraud_value_detection_rate": 0.9998247502018229,
+          "threshold": 0.13869258984640528,
+          "n_events": 6180
+        },
+        "fresh_attacker_approved_value": 0.0,
+        "fresh_attacker_mean_reward": -0.17605776105748205,
+        "fresh_attacker_mean_detection_rate": 1.0,
+        "calibration": {
+          "source": "legitimate_validation_temporal_60_80pct",
+          "legitimate_rows": 5600,
+          "target_fpr": 0.01,
+          "empirical_validation_fpr": 0.01,
+          "threshold": 0.13869258984640528
+        },
+        "fresh_value_reduction_vs_prior": 1.0,
+        "fresh_value_reduction_vs_v0": 1.0
+      }
+    }
+  },
+  "claims": {
+    "learned_attacker_beats_random": true,
+    "learned_attacker_beats_rule_mutation": true,
+    "v1_reduces_fresh_attacker_value": true,
+    "v2_reduces_fresh_attacker_value": true
+  },
+  "fidelity": {
+    "ks_amount": 0.5307236490101659,
+    "ks_velocity_1h": 0.5371722846441946,
+    "ks_device_trust": 0.17882490636704113,
+    "ks_merchant_risk": 0.4551865971107544,
+    "ks_graph_degree": 0.46815342429106477,
+    "js_log_amount": 0.13787384129312233
+  },
+  "serving": {
+    "single_event_latency_ms_p50": 15.983650002453942,
+    "single_event_latency_ms_p95": 19.508545001008315,
+    "measurement": "local commodity CPU, in-process single-event scoring"
+  },
+  "evaluation_protocol": {
+    "held_out_families": [
+      "qr_invoice_redirection",
+      "synthetic_evidence_refund"
+    ],
+    "initial_supervised_attack_families": [
+      "adaptive_card_testing",
+      "ai_app_scam_mule",
+      "deepfake_account_takeover",
+      "synthetic_identity_bustout"
+    ],
+    "adaptive_red_team_only_families": [
+      "agentic_intent_hijack",
+      "fake_merchant_collusion"
+    ],
+    "hardening_search_families": [
+      "adaptive_card_testing",
+      "ai_app_scam_mule",
+      "deepfake_account_takeover",
+      "synthetic_identity_bustout",
+      "agentic_intent_hijack",
+      "fake_merchant_collusion"
+    ],
+    "held_out_families_excluded_from_all_hardening": true,
+    "target_legitimate_fpr": 0.01,
+    "equal_campaign_budget": 72,
+    "campaigns_per_family": 42,
+    "action_variants_per_family": 16,
+    "fresh_action_variants_per_family": 20,
+    "defender_frozen_during_attack_search": true,
+    "fresh_action_space_for_generation_tests": true,
+    "adversarial_hardening_transitions": 2,
+    "threshold_calibration": {
+      "calibration_split": "legitimate validation rows from temporal 60%-80% window",
+      "evaluation_split": "legitimate test rows from temporal 80%-100% window plus separately generated attack campaigns",
+      "legitimate_split_rows": {
+        "train": 16800,
+        "validation": 5600,
+        "test": 5600
+      },
+      "event_id_overlap_validation_test": 0,
+      "known_campaign_overlap_train_validation": 0,
+      "known_campaign_overlap_validation_test": 0,
+      "held_out_campaigns_generated_separately": true,
+      "thresholds": {
+        "V0": {
+          "source": "legitimate_validation_temporal_60_80pct",
+          "legitimate_rows": 5600,
+          "target_fpr": 0.01,
+          "empirical_validation_fpr": 0.01,
+          "threshold": 0.1383436210598663
+        },
+        "V1": {
+          "source": "legitimate_validation_temporal_60_80pct",
+          "legitimate_rows": 5600,
+          "target_fpr": 0.01,
+          "empirical_validation_fpr": 0.01,
+          "threshold": 0.136562911478622
+        },
+        "V2": {
+          "source": "legitimate_validation_temporal_60_80pct",
+          "legitimate_rows": 5600,
+          "target_fpr": 0.01,
+          "empirical_validation_fpr": 0.01,
+          "threshold": 0.13869258984640528
+        }
+      },
+      "test_rows_used_for_threshold_selection": false
+    }
+  }
+}

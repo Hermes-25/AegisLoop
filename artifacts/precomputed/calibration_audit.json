@@ -1,0 +1,37 @@
+{
+  "calibration_split": "legitimate validation rows from temporal 60%-80% window",
+  "evaluation_split": "legitimate test rows from temporal 80%-100% window plus separately generated attack campaigns",
+  "legitimate_split_rows": {
+    "train": 16800,
+    "validation": 5600,
+    "test": 5600
+  },
+  "event_id_overlap_validation_test": 0,
+  "known_campaign_overlap_train_validation": 0,
+  "known_campaign_overlap_validation_test": 0,
+  "held_out_campaigns_generated_separately": true,
+  "thresholds": {
+    "V0": {
+      "source": "legitimate_validation_temporal_60_80pct",
+      "legitimate_rows": 5600,
+      "target_fpr": 0.01,
+      "empirical_validation_fpr": 0.01,
+      "threshold": 0.1383436210598663
+    },
+    "V1": {
+      "source": "legitimate_validation_temporal_60_80pct",
+      "legitimate_rows": 5600,
+      "target_fpr": 0.01,
+      "empirical_validation_fpr": 0.01,
+      "threshold": 0.136562911478622
+    },
+    "V2": {
+      "source": "legitimate_validation_temporal_60_80pct",
+      "legitimate_rows": 5600,
+      "target_fpr": 0.01,
+      "empirical_validation_fpr": 0.01,
+      "threshold": 0.13869258984640528
+    }
+  },
+  "test_rows_used_for_threshold_selection": false
+}

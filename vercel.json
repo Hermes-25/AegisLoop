@@ -1,0 +1,20 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "fluid": true,
+  "functions": {
+    "api/benchmark.py": {
+      "maxDuration": 240,
+      "excludeFiles": "{tests/**,tests-web/**,artifacts/**,docs/**,public/**,scripts/**,src/app/**,src/components/**,src/lib/**,.venv/**,.next/**,node_modules/**,.streamlit/**,app.py,*.pdf,*.md,*.png,*.pptx}"
+    }
+  },
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        { "key": "X-Content-Type-Options", "value": "nosniff" },
+        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
+        { "key": "Permissions-Policy", "value": "camera=(), microphone=(), geolocation=()" }
+      ]
+    }
+  ]
+}

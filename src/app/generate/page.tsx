@@ -1,0 +1,16 @@
+import { CampaignTimeline } from "@/components/campaign-timeline";
+import { FidelityDistribution } from "@/components/charts/fidelity-distribution";
+import { MetricCard } from "@/components/metric-card";
+import { PageHeader } from "@/components/page-header";
+import { ProvenanceChip } from "@/components/provenance-chip";
+import { Alert } from "@/components/ui/alert";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { loadRepresentativeCampaign, loadV2Diagnostics } from "@/lib/evidence/loader";
+import { format } from "@/lib/format";
+
+export const metadata = { title: "Generate · Simulation & Fidelity" };
+
+export default async function GeneratePage() {
+  const [campaign, diagnostics] = await Promise.all([loadRepresentativeCampaign(), loadV2Diagnostics()]);
+  return <div><PageHeader eyebrow="Generate · Simulation & fidelity" title="A campaign is a linked sequence of changing entities—not a row generator." conclusion="The hand-coded digital twin preserves time, identity reuse, velocity and relationship state across events, while a hard fidelity firewall rejects structurally invalid campaigns."><ProvenanceChip source="artifacts/precomputed/representative_campaign.json" field="generator, fidelity, summary, events" /></PageHeader><div className="mb-5 grid gap-4 md:grid-cols-3"><MetricCard label="Representative fidelity" value={format.number(campaign.fidelity.score)} detail="Composite validity score for the versioned illustrative rollout." source="artifacts/precomputed/representative_campaign.json" field="fidelity.score" tone="green" /><MetricCard label="Linked events" value={format.integer(campaign.summary.event_count)} detail="One deterministic rollout, ordered by timestamp." source="artifacts/precomputed/representative_campaign.json" field="summary.event_count" tone="orange" /><MetricCard label="Entity footprint" value={`${format.integer(campaign.summary.unique_devices)}D · ${format.integer(campaign.summary.unique_merchants)}M · ${format.integer(campaign.summary.unique_beneficiaries)}B`} detail="Unique devices, merchants and beneficiaries touched by the same campaign." source="artifacts/precomputed/representative_campaign.json" field="summary.unique_devices / unique_merchants / unique_beneficiaries" tone="blue" /></div><Alert title="Evidence boundary" tone="warning" className="mb-6">{campaign.evidence_boundary} {campaign.selection_note}</Alert><Card><CardHeader><div><CardTitle>Stateful campaign rollout</CardTitle><CardDescription>Select an event to inspect entity changes and the evolving behavioural/graph signals.</CardDescription></div><ProvenanceChip source="artifacts/precomputed/representative_campaign.json" field="events[*]" /></CardHeader><CardContent><CampaignTimeline campaign={campaign} /></CardContent></Card><Card className="mt-6"><CardHeader><div><CardTitle>Fidelity firewall · full V2 diagnostic</CardTitle><CardDescription>All campaign-level scores are shown across every seed; the table provides the exact summaries.</CardDescription></div><ProvenanceChip source="artifacts/precomputed/v2_campaign_diagnostics.csv" field="fidelity and seed_*_fidelity fields" /></CardHeader><CardContent><FidelityDistribution rows={diagnostics} /></CardContent></Card></div>;
+}

@@ -1,0 +1,29 @@
+import Link from "next/link";
+import { ArrowRight, BookOpen, Download, ExternalLink, GitBranch, Network, ShieldCheck } from "lucide-react";
+
+import { PageHeader } from "@/components/page-header";
+import { Alert } from "@/components/ui/alert";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+
+export const metadata = { title: "About & Methodology" };
+
+const deploymentStages = [
+  { title: "Offline threat lab", body: "Generate synthetic, entity-linked campaigns without exposing cardholder data or live authorization endpoints." },
+  { title: "Governed hardening set", body: "Only fidelity-valid evasions enter a versioned adversarial training candidate set." },
+  { title: "Shadow evaluation", body: "Compare candidate and incumbent defenders on time-separated traffic before any decisioning change." },
+  { title: "Human approval gate", body: "Fraud strategy, model risk and operations owners review evidence and false-positive trade-offs." },
+  { title: "Controlled promotion", body: "Deploy through existing scoring infrastructure with rollback, monitoring and outcome feedback." },
+];
+
+const references = [
+  ["FRAUD-RLA · transaction-level RL evasion", "https://arxiv.org/abs/2502.02290"],
+  ["Adyen · contextual bandits in payment processing", "https://arxiv.org/abs/2412.00569"],
+  ["Sajja · behavioural fidelity and graph-motif limits", "https://arxiv.org/abs/2604.13125"],
+  ["Mastercard · Decision Intelligence Pro direction", "https://www.mastercard.com/news/press/2024/february/mastercard-supercharges-consumer-protection-with-gen-ai"],
+];
+
+export default function MethodologyPage() {
+  return <div><PageHeader eyebrow="About · Methodology" title="A campaign-level extension of RL fraud evasion, closed into defender hardening." conclusion="AegisLoop combines a hand-coded stateful payment simulator, a contextual-bandit red team, a supervised-plus-anomaly defender and a leakage-free evidence protocol. It is an offline control-plane concept—not a replacement authorization engine."><Button asChild><Link href="/AegisLoop_Solution_Walkthrough.pdf" target="_blank"><Download className="h-4 w-4" />Full technical paper</Link></Button></PageHeader><div className="grid gap-6 xl:grid-cols-[0.9fr_1.1fr]"><Card><CardHeader><div><CardTitle>What is genuinely new</CardTitle><CardDescription>The novelty claim is intentionally specific.</CardDescription></div></CardHeader><CardContent><p className="text-lg leading-8 text-[var(--text)]">A campaign-level extension of single-transaction RL fraud-evasion attacks, closing the loop into adversarial defender hardening.</p><div className="mt-6 flex flex-wrap gap-2"><Badge tone="orange">Campaign policy</Badge><Badge tone="blue">Stateful simulator</Badge><Badge tone="green">Defender hardening</Badge></div><Alert title="What is not claimed" tone="warning" className="mt-6">AegisLoop does not claim to be the first adversarial fraud system, to reproduce production fraud prevalence, or to prove live-payment performance from synthetic evidence.</Alert></CardContent></Card><Card><CardHeader><div><CardTitle>Real-world integration path</CardTitle><CardDescription>Qualitative architecture only; no unsupported latency, throughput or ROI values.</CardDescription></div></CardHeader><CardContent><ol className="space-y-3">{deploymentStages.map((stage,index)=><li key={stage.title} className="grid grid-cols-[36px_1fr] gap-3"><span className="mono grid h-8 w-8 place-items-center rounded-full border border-[var(--border)] bg-[var(--chrome)] text-xs text-[var(--accent-blue)]">{index+1}</span><div className="pb-4"><p className="font-semibold">{stage.title}</p><p className="mt-1 text-sm leading-6 text-[var(--text-secondary)]">{stage.body}</p></div></li>)}</ol></CardContent></Card></div><div className="mt-6 grid gap-6 lg:grid-cols-2"><Card><CardHeader><div><CardTitle>System boundaries</CardTitle><CardDescription>Responsible-use controls embedded in the design.</CardDescription></div></CardHeader><CardContent className="space-y-4">{[[ShieldCheck,"Synthetic-only","No real cardholder data or live payment endpoints."],[Network,"Entity linked","Campaigns retain shared devices, beneficiaries, merchants and temporal state."],[GitBranch,"Versioned evidence","Every promoted claim maps to an immutable artifact field."]].map(([Icon,title,body])=>{const IconComponent=Icon as typeof ShieldCheck; return <div key={String(title)} className="flex gap-3"><IconComponent className="mt-0.5 h-5 w-5 shrink-0 text-[var(--defender)]" /><div><p className="font-semibold">{String(title)}</p><p className="mt-1 text-sm text-[var(--text-secondary)]">{String(body)}</p></div></div>;})}</CardContent></Card><Card><CardHeader><div><CardTitle>Research grounding</CardTitle><CardDescription>Primary sources used by the paper and prototype.</CardDescription></div></CardHeader><CardContent><ul className="space-y-2">{references.map(([label,href])=><li key={href}><Button asChild variant="ghost" className="h-auto w-full justify-between px-3 py-3 text-left"><Link href={href} target="_blank" rel="noreferrer"><span className="flex items-center gap-2"><BookOpen className="h-4 w-4 text-[var(--accent-blue)]" />{label}</span><ExternalLink className="h-3.5 w-3.5 shrink-0" /></Link></Button></li>)}</ul></CardContent></Card></div><div className="mt-6 flex flex-wrap items-center justify-between gap-4 rounded-md border border-[var(--border)] bg-[var(--surface)] p-5"><div><p className="font-semibold">Continue through the evidence, not the narrative.</p><p className="mt-1 text-sm text-[var(--text-secondary)]">The claim ledger exposes every source field used by the interface.</p></div><Button asChild variant="secondary"><Link href="/evidence">Open evidence ledger <ArrowRight className="h-4 w-4" /></Link></Button></div></div>;
+}

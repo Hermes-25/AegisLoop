@@ -1,0 +1,314 @@
+[
+  {
+    "family": "adaptive_card_testing",
+    "title": "Adaptive card-testing swarm",
+    "variants": [
+      "micro-authorisation probes",
+      "merchant-hop testing",
+      "low-and-slow retries",
+      "wallet-token validation"
+    ],
+    "channel": "card-not-present",
+    "rail": "card",
+    "genai_enabler": "Generative agents vary low-value purchase semantics and timing at scale.",
+    "objective": "Validate credentials before monetisation.",
+    "event_sequence": [
+      "probe",
+      "cooldown",
+      "retry",
+      "monetise"
+    ],
+    "amount_range": [
+      1.0,
+      85.0
+    ],
+    "event_range": [
+      6,
+      18
+    ],
+    "base_risk": 0.67,
+    "device_reuse": 0.28,
+    "beneficiary_reuse": 0.08,
+    "merchant_risk": 0.47,
+    "velocity": 0.88,
+    "novelty": 0.48,
+    "mitigations": [
+      "velocity controls",
+      "merchant-card graph risk",
+      "step-up authentication"
+    ]
+  },
+  {
+    "family": "ai_app_scam_mule",
+    "title": "AI-personalised APP scam into mule network",
+    "variants": [
+      "investment grooming",
+      "romance-to-payment",
+      "impersonation urgency",
+      "multilingual supplier scam"
+    ],
+    "channel": "social engineering",
+    "rail": "account-to-account",
+    "genai_enabler": "LLMs personalise pretexts and sustain multilingual conversations.",
+    "objective": "Induce an authorised transfer into a mule network.",
+    "event_sequence": [
+      "trust_build",
+      "new_payee",
+      "small_test",
+      "escalated_transfer"
+    ],
+    "amount_range": [
+      80.0,
+      4200.0
+    ],
+    "event_range": [
+      5,
+      10
+    ],
+    "base_risk": 0.74,
+    "device_reuse": 0.22,
+    "beneficiary_reuse": 0.76,
+    "merchant_risk": 0.36,
+    "velocity": 0.52,
+    "novelty": 0.66,
+    "mitigations": [
+      "confirmation of payee",
+      "beneficiary graph risk",
+      "behavioural step-up"
+    ]
+  },
+  {
+    "family": "deepfake_account_takeover",
+    "title": "Deepfake-assisted account takeover",
+    "variants": [
+      "voice recovery",
+      "video liveness challenge",
+      "synthetic document recovery",
+      "call-centre social engineering"
+    ],
+    "channel": "remote authentication",
+    "rail": "card and account",
+    "genai_enabler": "Synthetic voice/video and generated documents challenge remote identity checks.",
+    "objective": "Take control, add a payee, then move value.",
+    "event_sequence": [
+      "recovery",
+      "device_bind",
+      "credential_change",
+      "transfer"
+    ],
+    "amount_range": [
+      120.0,
+      6200.0
+    ],
+    "event_range": [
+      5,
+      9
+    ],
+    "base_risk": 0.82,
+    "device_reuse": 0.68,
+    "beneficiary_reuse": 0.48,
+    "merchant_risk": 0.45,
+    "velocity": 0.63,
+    "novelty": 0.72,
+    "mitigations": [
+      "liveness",
+      "device binding",
+      "post-recovery cooling period"
+    ]
+  },
+  {
+    "family": "synthetic_identity_bustout",
+    "title": "Synthetic-identity credit bust-out",
+    "variants": [
+      "thin-file persona",
+      "credit-line cultivation",
+      "coordinated family identities",
+      "AI-generated business identity"
+    ],
+    "channel": "credit lifecycle",
+    "rail": "card",
+    "genai_enabler": "GenAI produces coherent identity artefacts and longitudinal personas.",
+    "objective": "Build credibility, expand exposure, then exhaust credit.",
+    "event_sequence": [
+      "onboard",
+      "normal_spend",
+      "limit_growth",
+      "bustout"
+    ],
+    "amount_range": [
+      20.0,
+      8500.0
+    ],
+    "event_range": [
+      10,
+      20
+    ],
+    "base_risk": 0.79,
+    "device_reuse": 0.18,
+    "beneficiary_reuse": 0.12,
+    "merchant_risk": 0.51,
+    "velocity": 0.44,
+    "novelty": 0.83,
+    "mitigations": [
+      "identity-link analysis",
+      "credit trajectory monitoring",
+      "exposure throttling"
+    ]
+  },
+  {
+    "family": "agentic_intent_hijack",
+    "title": "Agentic-commerce intent hijack",
+    "variants": [
+      "catalogue prompt injection",
+      "delegation-scope confusion",
+      "merchant substitution",
+      "checkout intent drift"
+    ],
+    "channel": "AI agent checkout",
+    "rail": "card and token",
+    "genai_enabler": "Prompt injection or delegated-authority confusion alters an agent's payment intent.",
+    "objective": "Redirect an otherwise legitimate autonomous purchase.",
+    "event_sequence": [
+      "delegation",
+      "catalogue_poison",
+      "intent_drift",
+      "agent_checkout"
+    ],
+    "amount_range": [
+      25.0,
+      2400.0
+    ],
+    "event_range": [
+      5,
+      9
+    ],
+    "base_risk": 0.76,
+    "device_reuse": 0.31,
+    "beneficiary_reuse": 0.1,
+    "merchant_risk": 0.7,
+    "velocity": 0.49,
+    "novelty": 0.94,
+    "mitigations": [
+      "verifiable intent",
+      "merchant allow-list",
+      "agent action trace"
+    ]
+  },
+  {
+    "family": "fake_merchant_collusion",
+    "title": "GenAI fake-merchant collusion ring",
+    "variants": [
+      "generated storefront ring",
+      "transaction laundering",
+      "subscription trap",
+      "collusive refund cycling"
+    ],
+    "channel": "merchant ecosystem",
+    "rail": "card",
+    "genai_enabler": "Generated storefronts, product content and support histories create plausible merchants.",
+    "objective": "Launder fraudulent payments through related merchants.",
+    "event_sequence": [
+      "merchant_onboard",
+      "organic_cover",
+      "collusive_sales",
+      "cashout"
+    ],
+    "amount_range": [
+      15.0,
+      3100.0
+    ],
+    "event_range": [
+      8,
+      18
+    ],
+    "base_risk": 0.73,
+    "device_reuse": 0.24,
+    "beneficiary_reuse": 0.18,
+    "merchant_risk": 0.91,
+    "velocity": 0.39,
+    "novelty": 0.87,
+    "mitigations": [
+      "merchant graph intelligence",
+      "portfolio monitoring",
+      "settlement holds"
+    ]
+  },
+  {
+    "family": "qr_invoice_redirection",
+    "title": "AI-crafted invoice and QR redirection",
+    "variants": [
+      "supplier bank-change",
+      "dynamic QR replacement",
+      "payment-link impersonation",
+      "cross-border invoice diversion"
+    ],
+    "channel": "business email compromise",
+    "rail": "account-to-account",
+    "genai_enabler": "GenAI mimics supplier language and generates credible invoices and QR artefacts.",
+    "objective": "Redirect a business payment to a new beneficiary.",
+    "event_sequence": [
+      "supplier_mimic",
+      "invoice_issue",
+      "beneficiary_change",
+      "payment"
+    ],
+    "amount_range": [
+      240.0,
+      9800.0
+    ],
+    "event_range": [
+      5,
+      8
+    ],
+    "base_risk": 0.78,
+    "device_reuse": 0.16,
+    "beneficiary_reuse": 0.61,
+    "merchant_risk": 0.32,
+    "velocity": 0.41,
+    "novelty": 0.8,
+    "mitigations": [
+      "beneficiary-change verification",
+      "invoice consistency",
+      "payee reputation"
+    ]
+  },
+  {
+    "family": "synthetic_evidence_refund",
+    "title": "Synthetic-evidence refund abuse",
+    "variants": [
+      "generated damage evidence",
+      "fake non-delivery narrative",
+      "synthetic merchant correspondence",
+      "coordinated friendly fraud"
+    ],
+    "channel": "post-transaction",
+    "rail": "card dispute",
+    "genai_enabler": "Image and text generators create coherent but false fulfilment or damage evidence.",
+    "objective": "Obtain a refund or chargeback after legitimate fulfilment.",
+    "event_sequence": [
+      "purchase",
+      "fulfilment",
+      "evidence_forge",
+      "refund_claim"
+    ],
+    "amount_range": [
+      20.0,
+      1800.0
+    ],
+    "event_range": [
+      5,
+      9
+    ],
+    "base_risk": 0.64,
+    "device_reuse": 0.12,
+    "beneficiary_reuse": 0.08,
+    "merchant_risk": 0.43,
+    "velocity": 0.28,
+    "novelty": 0.77,
+    "mitigations": [
+      "evidence provenance",
+      "claim-behaviour graph",
+      "merchant fulfilment signals"
+    ]
+  }
+]

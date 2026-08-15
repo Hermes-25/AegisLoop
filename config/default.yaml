@@ -1,0 +1,38 @@
+seed: 20260812
+simulation:
+  customers: 2400
+  merchants: 620
+  devices: 2900
+  beneficiaries: 1300
+  legitimate_events: 28000
+  campaign_min_events: 5
+  campaign_max_events: 20
+training:
+  validation_fraction: 0.20
+  test_fraction: 0.20
+  target_legitimate_fpr: 0.01
+  known_attack_families:
+    - adaptive_card_testing
+    - ai_app_scam_mule
+    - deepfake_account_takeover
+    - synthetic_identity_bustout
+  adaptive_attack_families:
+    - agentic_intent_hijack
+    - fake_merchant_collusion
+  held_out_attack_families:
+    - qr_invoice_redirection
+    - synthetic_evidence_refund
+red_team:
+  campaign_budget: 72
+  events_per_evaluation: 12
+  linucb_alpha: 1.15
+  rolling_context_window: 8
+  validity_penalty: -1.0
+  approved_value_scale: 500.0
+  evasion_reward_weight: 2.5
+  detection_cost_rate: 0.16
+  resource_cost_per_event: 2.5
+  novelty_bonus: 0.20
+loop:
+  adversarial_rounds: 2
+  top_evasions_per_round: 12

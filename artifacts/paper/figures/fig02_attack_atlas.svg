@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="460.8pt" height="402.48pt" viewBox="0 0 460.8 402.48" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-08-13T21:37:33.339292</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.10.5, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 402.48 
+L 460.8 402.48 
+L 460.8 -0 
+L 0 -0 
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 18.8064 128.28096 
+L 223.2576 128.28096 
+Q 231.2928 128.28096 231.2928 121.29552 
+L 231.2928 56.09808 
+Q 231.2928 49.11264 223.2576 49.11264 
+L 18.8064 49.11264 
+Q 10.7712 49.11264 10.7712 56.09808 
+L 10.7712 121.29552 
+Q 10.7712 128.28096 18.8064 128.28096 
+z
+" clip-path="url(#p3d55dac345)" style="fill: #ffffff; stroke: #2457c5; stroke-width: 1.6; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_3">
+    <path d="M 18.8064 71.000352 
+L 223.2576 71.000352 
+Q 231.2928 71.000352 231.2928 64.014912 
+L 231.2928 56.09808 
+Q 231.2928 49.11264 223.2576 49.11264 
+L 18.8064 49.11264 
+Q 10.7712 49.11264 10.7712 56.09808 
+L 10.7712 64.014912 
+Q 10.7712 71.000352 18.8064 71.000352 
+z
+" clip-path="url(#p3d55dac345)" style="fill: #2457c5"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 237.5424 128.28096 
+L 441.9936 128.28096 
+Q 450.0288 128.28096 450.0288 121.29552 
+L 450.0288 56.09808 
+Q 450.0288 49.11264 441.9936 49.11264 
+L 237.5424 49.11264 
+Q 229.5072 49.11264 229.5072 56.09808 
+L 229.5072 121.29552 
+Q 229.5072 128.28096 237.5424 128.28096 
+z
+" clip-path="url(#p3d55dac345)" style="fill: #ffffff; stroke: #11a7a0; stroke-width: 1.6; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 237.5424 71.000352 
+L 441.9936 71.000352 
+Q 450.0288 71.000352 450.0288 64.014912 
+L 450.0288 56.09808 
+Q 450.0288 49.11264 441.9936 49.11264 
+L 237.5424 49.11264 
+Q 229.5072 49.11264 229.5072 56.09808 
+L 229.5072 64.014912 
+Q 229.5072 71.000352 237.5424 71.000352 
+z
+" clip-path="url(#p3d55dac345)" style="fill: #11a7a0"/>
+   </g>
+   <g id="patch_6">
+    <path d="M 18.8064 213.65856 
+L 223.2576 213.65856 
+Q 231.2928 213.65856 231.2928 206.67312 
+L 231.2928 141.47568 
+Q 231.2928 134.49024 223.2576 134.49024 
+L 18.8064 134.49024 
+Q 10.7712 134.49024 10.7712 141.47568 
+L 10.7712 206.67312 
+Q 10.7712 213.65856 18.8064 213.65856 
+z
+" clip-path="url(#p3d55dac345)" style="fill: #ffffff; stroke: #ef7b28; stroke-width: 1.6; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_7">
+    <path d="M 18.8064 156.377952 
+L 223.2576 156.377952 
+Q 231.2928 156.377952 231.2928 149.392512 
+L 231.2928 141.47568 
+Q 231.2928 134.49024 223.2576 134.49024 
+L 18.8064 134.49024 
+Q 10.7712 134.49024 10.7712 141.47568 
+L 10.7712 149.392512 
+Q 10.7712 156.377952 18.8064 156.377952 
+z
+" clip-path="url(#p3d55dac345)" style="fill: #ef7b28"/>
+   </g>
+   <g id="patch_8">
+    <path d="M 237.5424 213.65856 
+L 441.9936 213.65856 
+Q 450.0288 213.65856 450.0288 206.67312 
+L 450.0288 141.47568 
+Q 450.0288 134.49024 441.9936 134.49024 
+L 237.5424 134.49024 
+Q 229.5072 134.49024 229.5072 141.47568 
+L 229.5072 206.67312 
+Q 229.5072 213.65856 237.5424 213.65856 
+z
+" clip-path="url(#p3d55dac345)" style="fill: #ffffff; stroke: #c23b36; stroke-width: 1.6; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_9">
+    <path d="M 237.5424 156.377952 
+L 441.9936 156.377952 
+Q 450.0288 156.377952 450.0288 149.392512 
+L 450.0288 141.47568 
+Q 450.0288 134.49024 441.9936 134.49024 
+L 237.5424 134.49024 
+Q 229.5072 134.49024 229.5072 141.47568 
+L 229.5072 149.392512 
+Q 229.5072 156.377952 237.5424 156.377952 
+z
+" clip-path="url(#p3d55dac345)" style="fill: #c23b36"/>
+   </g>
+   <g id="patch_10">
+    <path d="M 18.8064 299.03616 
+L 223.2576 299.03616 
+Q 231.2928 299.03616 231.2928 292.05072 
+L 231.2928 226.85328 
+Q 231.2928 219.86784 223.2576 219.86784 
+L 18.8064 219.86784 
+Q 10.7712 219.86784 10.7712 226.85328 
+L 10.7712 292.05072 
+Q 10.7712 299.03616 18.8064 299.03616 
+z
+" clip-path="url(#p3d55dac345)" style="fill: #ffffff; stroke: #6c56b3; stroke-width: 1.6; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_11">
+    <path d="M 18.8064 241.755552 
+L 223.2576 241.755552 
+Q 231.2928 241.755552 231.2928 234.770112 
+L 231.2928 226.85328 
+Q 231.2928 219.86784 223.2576 219.86784 
+L 18.8064 219.86784 
+Q 10.7712 219.86784 10.7712 226.85328 
+L 10.7712 234.770112 
+Q 10.7712 241.755552 18.8064 241.755552 
+z
+" clip-path="url(#p3d55dac345)" style="fill: #6c56b3"/>
+   </g>
+   <g id="patch_12">
+    <path d="M 237.5424 299.03616 
+L 441.9936 299.03616 
+Q 450.0288 299.03616 450.0288 292.05072 
+L 450.0288 226.85328 
+Q 450.0288 219.86784 441.9936 219.86784 
+L 237.5424 219.86784 
+Q 229.5072 219.86784 229.5072 226.85328 
+L 229.5072 292.05072 
+Q 229.5072 299.03616 237.5424 299.03616 
+z
+" clip-path="url(#p3d55dac345)" style="fill: #ffffff; stroke: #297a66; stroke-width: 1.6; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_13">
+    <path d="M 237.5424 241.755552 
+L 441.9936 241.755552 
+Q 450.0288 241.755552 450.0288 234.770112 
+L 450.0288 226.85328 
+Q 450.0288 219.86784 441.9936 219.86784 
+L 237.5424 219.86784 
+Q 229.5072 219.86784 229.5072 226.85328 
+L 229.5072 234.770112 
+Q 229.5072 241.755552 237.5424 241.755552 
+z
+" clip-path="url(#p3d55dac345)" style="fill: #297a66"/>
+   </g>
+   <g id="patch_14">
+    <path d="M 18.8064 384.41376 
+L 223.2576 384.41376 
+Q 231.2928 384.41376 231.2928 377.42832 
+L 231.2928 312.23088 
+Q 231.2928 305.24544 223.2576 305.24544 
+L 18.8064 305.24544 
+Q 10.7712 305.24544 10.7712 312.23088 
+L 10.7712 377.42832 
+Q 10.7712 384.41376 18.8064 384.41376 
+z
+" clip-path="url(#p3d55dac345)" style="fill: #ffffff; stroke: #b65b8f; stroke-width: 1.6; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_15">
+    <path d="M 18.8064 327.133152 
+L 223.2576 327.133152 
+Q 231.2928 327.133152 231.2928 320.147712 
+L 231.2928 312.23088 
+Q 231.2928 305.24544 223.2576 305.24544 
+L 18.8064 305.24544 
+Q 10.7712 305.24544 10.7712 312.23088 
+L 10.7712 320.147712 
+Q 10.7712 327.133152 18.8064 327.133152 
+z
+" clip-path="url(#p3d55dac345)" style="fill: #b65b8f"/>
+   </g>
+   <g id="patch_16">
+    <path d="M 237.5424 384.41376 
+L 441.9936 384.41376 
+Q 450.0288 384.41376 450.0288 377.42832 
+L 450.0288 312.23088 
+Q 450.0288 305.24544 441.9936 305.24544 
+L 237.5424 305.24544 
+Q 229.5072 305.24544 229.5072 312.23088 
+L 229.5072 377.42832 
+Q 229.5072 384.41376 237.5424 384.41376 
+z
+" clip-path="url(#p3d55dac345)" style="fill: #ffffff; stroke: #8a6a2f; stroke-width: 1.6; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_17">
+    <path d="M 237.5424 327.133152 
+L 441.9936 327.133152 
+Q 450.0288 327.133152 450.0288 320.147712 
+L 450.0288 312.23088 
+Q 450.0288 305.24544 441.9936 305.24544 
+L 237.5424 305.24544 
+Q 229.5072 305.24544 229.5072 312.23088 
+L 229.5072 320.147712 
+Q 229.5072 327.133152 237.5424 327.133152 
+z
+" clip-path="url(#p3d55dac345)" style="fill: #8a6a2f"/>
+   </g>
+   <g id="text_1">
+    <text style="font-weight: 700; font-size: 15px; font-family: 'Arial'; text-anchor: start; fill: #10233f" x="16.128" y="20.7828" transform="rotate(-0 16.128 20.7828)">Attack atlas: equal coverage across the payment lifecycle</text>
+   </g>
+   <g id="text_2">
+    <text style="font-size: 9.5px; font-family: 'Arial'; text-anchor: start; fill: #566477" x="16.128" y="36.306" transform="rotate(-0 16.128 36.306)">Eight archetypes x four variants; three are illustrative case studies, not a selection hierarchy</text>
+   </g>
+   <g id="text_3">
+    <text style="font-weight: 700; font-size: 9.5px; font-family: 'Arial'; text-anchor: start; fill: #ffffff" x="24.1632" y="62.45673" transform="rotate(-0 24.1632 62.45673)">Adaptive card-testing swarm</text>
+   </g>
+   <g id="text_4">
+    <text style="font-size: 7.2px; font-family: 'Arial'; fill: #10233f" transform="translate(26.8416 75.077487)">card-not-present / card</text>
+    <text style="font-size: 7.2px; font-family: 'Arial'; fill: #10233f" transform="translate(26.8416 83.060206)">micro-authorisation probes | merchant-hop testing |</text>
+    <text style="font-size: 7.2px; font-family: 'Arial'; fill: #10233f" transform="translate(26.8416 91.127299)">low-and-slow retries | wallet-token validation</text>
+   </g>
+   <g id="text_5">
+    <text style="font-weight: 700; font-size: 9.5px; font-family: 'Arial'; text-anchor: start; fill: #ffffff" x="242.8992" y="62.519074" transform="rotate(-0 242.8992 62.519074)">AI-personalised APP scam into mule network</text>
+   </g>
+   <g id="text_6">
+    <text style="font-size: 7.2px; font-family: 'Arial'; fill: #10233f" transform="translate(245.5776 74.989737)">Illustrative case study</text>
+    <text style="font-size: 7.2px; font-family: 'Arial'; fill: #10233f" transform="translate(245.5776 83.056831)">social engineering / account-to-account</text>
+    <text style="font-size: 7.2px; font-family: 'Arial'; fill: #10233f" transform="translate(245.5776 91.123924)">investment grooming | romance-to-payment |</text>
+    <text style="font-size: 7.2px; font-family: 'Arial'; fill: #10233f" transform="translate(245.5776 99.191018)">impersonation urgency | multilingual supplier scam</text>
+   </g>
+   <g id="text_7">
+    <text style="font-weight: 700; font-size: 9.5px; font-family: 'Arial'; text-anchor: start; fill: #ffffff" x="24.1632" y="147.954565" transform="rotate(-0 24.1632 147.954565)">Deepfake-assisted account takeover</text>
+   </g>
+   <g id="text_8">
+    <text style="font-size: 7.2px; font-family: 'Arial'; fill: #10233f" transform="translate(26.8416 160.367337)">remote authentication / card and account</text>
+    <text style="font-size: 7.2px; font-family: 'Arial'; fill: #10233f" transform="translate(26.8416 168.350056)">voice recovery | video liveness challenge | synthetic</text>
+    <text style="font-size: 7.2px; font-family: 'Arial'; fill: #10233f" transform="translate(26.8416 176.417149)">document recovery | call-centre social engineering</text>
+   </g>
+   <g id="text_9">
+    <text style="font-weight: 700; font-size: 9.5px; font-family: 'Arial'; text-anchor: start; fill: #ffffff" x="242.8992" y="147.892221" transform="rotate(-0 242.8992 147.892221)">Synthetic-identity credit bust-out</text>
+   </g>
+   <g id="text_10">
+    <text style="font-size: 7.2px; font-family: 'Arial'; fill: #10233f" transform="translate(245.5776 160.455087)">credit lifecycle / card</text>
+    <text style="font-size: 7.2px; font-family: 'Arial'; fill: #10233f" transform="translate(245.5776 168.522181)">thin-file persona | credit-line cultivation |</text>
+    <text style="font-size: 7.2px; font-family: 'Arial'; fill: #10233f" transform="translate(245.5776 176.589274)">coordinated family identities | AI-generated business</text>
+    <text style="font-size: 7.2px; font-family: 'Arial'; fill: #10233f" transform="translate(245.5776 184.546681)">identity</text>
+   </g>
+   <g id="text_11">
+    <text style="font-weight: 700; font-size: 9.5px; font-family: 'Arial'; text-anchor: start; fill: #ffffff" x="24.1632" y="233.21193" transform="rotate(-0 24.1632 233.21193)">Agentic-commerce intent hijack</text>
+   </g>
+   <g id="text_12">
+    <text style="font-size: 7.2px; font-family: 'Arial'; fill: #10233f" transform="translate(26.8416 245.744937)">Illustrative case study</text>
+    <text style="font-size: 7.2px; font-family: 'Arial'; fill: #10233f" transform="translate(26.8416 253.812031)">AI agent checkout / card and token</text>
+    <text style="font-size: 7.2px; font-family: 'Arial'; fill: #10233f" transform="translate(26.8416 261.879124)">catalogue prompt injection | delegation-scope</text>
+    <text style="font-size: 7.2px; font-family: 'Arial'; fill: #10233f" transform="translate(26.8416 269.946218)">confusion | merchant substitution | checkout intent</text>
+    <text style="font-size: 7.2px; font-family: 'Arial'; fill: #10233f" transform="translate(26.8416 277.903624)">drift</text>
+   </g>
+   <g id="text_13">
+    <text style="font-weight: 700; font-size: 9.5px; font-family: 'Arial'; text-anchor: start; fill: #ffffff" x="242.8992" y="233.269821" transform="rotate(-0 242.8992 233.269821)">GenAI fake-merchant collusion ring</text>
+   </g>
+   <g id="text_14">
+    <text style="font-size: 7.2px; font-family: 'Arial'; fill: #10233f" transform="translate(245.5776 245.832687)">merchant ecosystem / card</text>
+    <text style="font-size: 7.2px; font-family: 'Arial'; fill: #10233f" transform="translate(245.5776 253.899781)">generated storefront ring | transaction laundering |</text>
+    <text style="font-size: 7.2px; font-family: 'Arial'; fill: #10233f" transform="translate(245.5776 261.966874)">subscription trap | collusive refund cycling</text>
+   </g>
+   <g id="text_15">
+    <text style="font-weight: 700; font-size: 9.5px; font-family: 'Arial'; text-anchor: start; fill: #ffffff" x="24.1632" y="318.651874" transform="rotate(-0 24.1632 318.651874)">AI-crafted invoice and QR redirection</text>
+   </g>
+   <g id="text_16">
+    <text style="font-size: 7.2px; font-family: 'Arial'; fill: #10233f" transform="translate(26.8416 331.210287)">business email compromise / account-to-account</text>
+    <text style="font-size: 7.2px; font-family: 'Arial'; fill: #10233f" transform="translate(26.8416 339.198631)">supplier bank-change | dynamic QR replacement |</text>
+    <text style="font-size: 7.2px; font-family: 'Arial'; fill: #10233f" transform="translate(26.8416 347.265724)">payment-link impersonation | cross-border invoice</text>
+    <text style="font-size: 7.2px; font-family: 'Arial'; fill: #10233f" transform="translate(26.8416 355.223131)">diversion</text>
+   </g>
+   <g id="text_17">
+    <text style="font-weight: 700; font-size: 9.5px; font-family: 'Arial'; text-anchor: start; fill: #ffffff" x="242.8992" y="318.647421" transform="rotate(-0 242.8992 318.647421)">Synthetic-evidence refund abuse</text>
+   </g>
+   <g id="text_18">
+    <text style="font-size: 7.2px; font-family: 'Arial'; fill: #10233f" transform="translate(245.5776 331.122537)">Illustrative case study</text>
+    <text style="font-size: 7.2px; font-family: 'Arial'; fill: #10233f" transform="translate(245.5776 339.189631)">post-transaction / card dispute</text>
+    <text style="font-size: 7.2px; font-family: 'Arial'; fill: #10233f" transform="translate(245.5776 347.172349)">generated damage evidence | fake non-delivery</text>
+    <text style="font-size: 7.2px; font-family: 'Arial'; fill: #10233f" transform="translate(245.5776 355.239443)">narrative | synthetic merchant correspondence |</text>
+    <text style="font-size: 7.2px; font-family: 'Arial'; fill: #10233f" transform="translate(245.5776 363.306537)">coordinated friendly fraud</text>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p3d55dac345">
+   <rect x="7.2" y="7.2" width="446.4" height="388.08"/>
+  </clipPath>
+ </defs>
+</svg>
