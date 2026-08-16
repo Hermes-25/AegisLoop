@@ -20,5 +20,20 @@ artifacts/runs/*
 artifacts/models/*
 !artifacts/models/.gitkeep
 
+# LaTeX build and visual-QA intermediates. Source and vector figures remain tracked.
+deliverables/latex/paper/main.aux
+deliverables/latex/paper/main.bbl
+deliverables/latex/paper/main.lof
+deliverables/latex/paper/main.out
+deliverables/latex/paper/main.run.xml
+deliverables/latex/paper/main.toc
+deliverables/latex/paper/main-blx.bib
+deliverables/latex/paper/main.pdf
+deliverables/latex/paper/renders/
+deliverables/latex/architecture/aegisloop_technical_architecture.pdf
+deliverables/latex/architecture/aegisloop_technical_architecture.png
+deliverables/latex/architecture/aegisloop_technical_architecture.svg
+deliverables/latex/sample/
+
 .vercel
 .env*

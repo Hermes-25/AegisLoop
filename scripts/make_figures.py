@@ -11,6 +11,7 @@ the approved architecture document and attack-atlas artifact respectively.
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import textwrap
 from pathlib import Path
@@ -30,17 +31,20 @@ SLATE = "#566477"
 LIGHT = "#EEF3F8"
 MID = "#C8D2DE"
 WHITE = "#FFFFFF"
+PRINT_PDF = False
 
 
-def configure_style() -> None:
+def configure_style(*, print_mode: bool = False) -> None:
     plt.switch_backend("Agg")
+    base_font_size = 10.5 if print_mode else 9.5
+    title_font_size = 14 if print_mode else 13
     mpl.rcParams.update(
         {
-            "font.family": "Arial",
-            "font.size": 9.5,
-            "axes.titlesize": 13,
+            "font.family": "cmr10" if print_mode else "Arial",
+            "font.size": base_font_size,
+            "axes.titlesize": title_font_size,
             "axes.titleweight": "bold",
-            "axes.labelsize": 9.5,
+            "axes.labelsize": base_font_size,
             "axes.edgecolor": MID,
             "axes.linewidth": 0.8,
             "axes.grid": True,
@@ -56,6 +60,8 @@ def configure_style() -> None:
             "savefig.facecolor": WHITE,
             "savefig.bbox": "tight",
             "svg.fonttype": "none",
+            "pdf.fonttype": 42,
+            "axes.formatter.use_mathtext": print_mode,
         }
     )
 
@@ -64,7 +70,53 @@ def save(fig: plt.Figure, output_dir: Path, stem: str) -> None:
     output_dir.mkdir(parents=True, exist_ok=True)
     fig.savefig(output_dir / f"{stem}.png", dpi=300, bbox_inches="tight")
     fig.savefig(output_dir / f"{stem}.svg", bbox_inches="tight")
+    if PRINT_PDF:
+        fig.savefig(output_dir / f"{stem}.pdf", bbox_inches="tight")
     plt.close(fig)
+
+
+def sha256_file(path: Path) -> str:
+    digest = hashlib.sha256()
+    with path.open("rb") as handle:
+        for chunk in iter(lambda: handle.read(1024 * 1024), b""):
+            digest.update(chunk)
+    return digest.hexdigest()
+
+
+def write_print_manifest(repo: Path, output_dir: Path) -> None:
+    """Record exact evidence inputs and plotted Figure 3 values for auditability."""
+    seed_path = repo / "artifacts" / "full_multiseed" / "seed_results.csv"
+    aggregate_path = repo / "artifacts" / "full_multiseed" / "aggregate.json"
+    diagnostic_path = repo / "artifacts" / "precomputed" / "v2_campaign_diagnostics.csv"
+    atlas_path = repo / "artifacts" / "precomputed" / "attack_atlas.json"
+    prevalence_path = repo / "artifacts" / "precomputed" / "prevalence_metrics.csv"
+    seed = pd.read_csv(seed_path)
+    aggregate = json.loads(aggregate_path.read_text(encoding="utf-8"))
+    reward_columns = [
+        "contextual_bandit_reward",
+        "rule_mutation_reward",
+        "random_reward",
+    ]
+    manifest = {
+        "render_mode": "print-pdf",
+        "data_transform": "none; identical plotting functions and artifact paths as the PNG/SVG pipeline",
+        "source_sha256": {
+            str(path.relative_to(repo)).replace("\\", "/"): sha256_file(path)
+            for path in [seed_path, aggregate_path, diagnostic_path, atlas_path, prevalence_path]
+        },
+        "figure_3_reward_data": {
+            column: {
+                "seed_values": [float(value) for value in seed[column]],
+                "mean": float(aggregate[column]["mean"]),
+                "ci95_low": float(aggregate[column]["ci95_low"]),
+                "ci95_high": float(aggregate[column]["ci95_high"]),
+            }
+            for column in reward_columns
+        },
+    }
+    (output_dir / "latex_figure_manifest.json").write_text(
+        json.dumps(manifest, indent=2) + "\n", encoding="utf-8"
+    )
 
 
 def box(ax, xy, width, height, title, body, color, *, fontsize=8.4):
@@ -280,20 +332,30 @@ def prevalence_figure(prevalence_path: Path, output_dir: Path) -> None:
 
 
 def main() -> None:
+    global PRINT_PDF
     parser = argparse.ArgumentParser()
     parser.add_argument("--repo", type=Path, default=Path(__file__).resolve().parents[1])
     parser.add_argument("--output", type=Path)
+    parser.add_argument(
+        "--print-pdf",
+        action="store_true",
+        help="Also emit vector PDF figures with larger print-optimized typography.",
+    )
     args = parser.parse_args()
     repo = args.repo.resolve()
     output_dir = (args.output or repo / "artifacts" / "paper" / "figures").resolve()
-    configure_style()
+    PRINT_PDF = args.print_pdf
+    configure_style(print_mode=args.print_pdf)
     architecture_figure(output_dir)
     taxonomy_figure(repo / "artifacts" / "precomputed" / "attack_atlas.json", output_dir)
     reward_figure(repo / "artifacts" / "full_multiseed" / "seed_results.csv", repo / "artifacts" / "full_multiseed" / "aggregate.json", output_dir)
     defender_progression_figure(repo / "artifacts" / "full_multiseed" / "aggregate.json", output_dir)
     approved_value_figure(repo / "artifacts" / "full_multiseed" / "seed_results.csv", repo / "artifacts" / "precomputed" / "v2_campaign_diagnostics.csv", output_dir)
     prevalence_figure(repo / "artifacts" / "precomputed" / "prevalence_metrics.csv", output_dir)
-    print(f"Wrote six figures (PNG + SVG) to {output_dir}")
+    if args.print_pdf:
+        write_print_manifest(repo, output_dir)
+    formats = "PNG + SVG + vector PDF" if args.print_pdf else "PNG + SVG"
+    print(f"Wrote six figures ({formats}) to {output_dir}")
 
 
 if __name__ == "__main__":

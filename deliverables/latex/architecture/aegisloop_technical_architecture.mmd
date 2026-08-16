@@ -1,0 +1,87 @@
+%% AegisLoop implementation architecture.
+%% Source of truth: src/aegisloop/*.py, docs/ARCHITECTURE.md, docs/BENCHMARKS.md.
+flowchart TB
+  classDef source fill:#F5F5F5,stroke:#333333,color:#111111,stroke-width:1px;
+  classDef attack fill:#FFF1EA,stroke:#B74318,color:#111111,stroke-width:1.4px;
+  classDef simulation fill:#EDF5FC,stroke:#236BAA,color:#111111,stroke-width:1.4px;
+  classDef gate fill:#FFF8E4,stroke:#8B6508,color:#111111,stroke-width:1.4px;
+  classDef defense fill:#EDF8F3,stroke:#28735C,color:#111111,stroke-width:1.4px;
+  classDef evidence fill:#F2EFF8,stroke:#604B82,color:#111111,stroke-width:1.4px;
+  classDef boundary fill:#FFFFFF,stroke:#0E223D,color:#111111,stroke-width:1.8px;
+
+  subgraph ONLINE["ONLINE PLANE - one frozen-defender campaign evaluation"]
+    direction LR
+    subgraph INPUTS["A. Governed inputs"]
+      direction TB
+      CFG["Versioned run configuration<br/>5 fixed seeds; 72 campaigns; 12 events"]:::source
+      ATLAS["Threat compiler<br/>8 archetypes x 4 variants<br/>bounded scenario DSL"]:::attack
+      ROLES["Family-role contract<br/>4 known | 2 adaptive | 2 held-out"]:::evidence
+    end
+
+    subgraph POLICY["B. Adaptive red team"]
+      direction TB
+      ACTION["Finite campaign-action pool<br/>family; amount/timing; entity reuse;<br/>merchant; authentication; evidence"]:::attack
+      CONTEXT["Six-dimensional online context<br/>bias; recent detection, fidelity, reward;<br/>family detection and coverage"]:::attack
+      LINUCB["Shared LinUCB<br/>28-dimensional action-context vector<br/>score = theta^T x + alpha sqrt(x^T A^-1 x)<br/>A <- A + xx^T; b <- b + r x"]:::attack
+      ACTION --> LINUCB
+      CONTEXT --> LINUCB
+    end
+
+    subgraph TWIN["C. Stateful payment digital twin"]
+      direction TB
+      WORLD["Synthetic entity world<br/>customers | devices | merchants | beneficiaries"]:::simulation
+      ROLLOUT["Ordered campaign rollout<br/>entity binding and controlled reuse<br/>timestamp, amount and intent evolution"]:::simulation
+      CONTRACT["Defender feature contract<br/>22 numeric + 2 categorical fields<br/>velocity, relationships, intent, provenance"]:::simulation
+      WORLD --> ROLLOUT --> CONTRACT
+    end
+
+    subgraph FIREWALL["D. Fidelity firewall"]
+      direction TB
+      CHECKS["Independent structural checks<br/>schema | range | chronology<br/>graph reuse | behavioural bounds"]:::gate
+      FIDELITY["F = 0.18 schema + 0.24 range + 0.22 temporal<br/>+ 0.18 graph + 0.18 behavioural<br/>valid if F >= 0.78 and hard gates pass"]:::gate
+      VALID{"Valid?"}:::gate
+      CHECKS --> FIDELITY --> VALID
+    end
+
+    subgraph DEFENDER["E. Frozen blue-team defender"]
+      direction TB
+      PREP["Preprocess<br/>median imputation; standardization;<br/>one-hot channel and rail"]:::defense
+      BRANCHES["Three score branches<br/>HistGradientBoosting | IsolationForest<br/>relationship and intent risk"]:::defense
+      RISK["Risk = 0.80 supervised + 0.13 anomaly<br/>+ 0.07 relationship / intent"]:::defense
+      CALIBRATE["Validation-only calibration<br/>1% target legitimate FPR<br/>deterministic per-event tolerance buckets"]:::defense
+      OUTCOME["Black-box outcome<br/>approve | step-up | hold | decline<br/>detected mask + approved synthetic value"]:::defense
+      PREP --> BRANCHES --> RISK --> CALIBRATE --> OUTCOME
+    end
+
+    subgraph FEEDBACK["F. Reward and online learning"]
+      direction TB
+      REWARD["Logged campaign reward<br/>R = fidelity x (value + evasion - detection<br/>- resource + novelty); invalid = -1"]:::attack
+      TRACE["Per-campaign evidence row<br/>all reward terms; action; validity; fidelity;<br/>detection; approved synthetic value"]:::evidence
+      UPDATE["Immediate policy update<br/>update A and b; refresh rolling context"]:::attack
+      REWARD --> TRACE --> UPDATE
+    end
+  end
+
+  subgraph OFFLINE["OFFLINE GOVERNANCE PLANE - inter-generation hardening boundary"]
+    direction LR
+    ELIGIBLE{"Fidelity-valid evasion<br/>with positive approved value?"}:::boundary
+    ARCHIVE["Governed evasion archive<br/>retain top 12 campaigns per transition"]:::boundary
+    AUGMENT["Cumulative attack training set<br/>known training data + approved evasions"]:::boundary
+    RETRAIN["Retrain and recalibrate<br/>V0 -> V1 -> V2<br/>same legitimate validation window"]:::boundary
+    AUDIT["Final audit surface<br/>held-out families + matched fixed pool<br/>five seeds; versioned artifacts"]:::evidence
+    ELIGIBLE -- yes --> ARCHIVE --> AUGMENT --> RETRAIN --> AUDIT
+  end
+
+  CFG --> ACTION
+  ATLAS --> ACTION
+  ROLES --> WORLD
+  LINUCB -- complete campaign parameters --> ROLLOUT
+  CONTRACT --> CHECKS
+  VALID -- yes --> PREP
+  VALID -- no --> REWARD
+  CONTRACT -. relationship and intent fields .-> BRANCHES
+  OUTCOME --> REWARD
+  UPDATE -. next campaign .-> CONTEXT
+  TRACE --> ELIGIBLE
+  RETRAIN -. next frozen generation .-> DEFENDER
+  ROLES -. held-out only at final evaluation .-> AUDIT

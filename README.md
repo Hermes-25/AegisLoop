@@ -30,6 +30,8 @@
   <a href="./RESULTS.md"><strong>Audit the full results</strong></a>
 </p>
 
+> **Primary submission artifact:** the final [28-page LaTeX Solution Walkthrough](./AegisLoop_Solution_Walkthrough.pdf) is the canonical technical paper for AegisLoop. Its [LaTeX source](./deliverables/latex/paper/main.tex), [managed bibliography](./deliverables/latex/paper/references.bib), [vector figures](./deliverables/latex/paper/figures), and [Mermaid technical-architecture source](./deliverables/latex/architecture/aegisloop_technical_architecture.mmd) are included for reproducibility.
+
 ---
 
 ## The decision in one sentence
