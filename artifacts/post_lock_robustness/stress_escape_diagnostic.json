@@ -1,0 +1,26 @@
+{
+  "defender_seed": 20260813,
+  "iteration": 126,
+  "action_id": "adaptive_card_testing|1.14|1.98|0.26|0.07|0.98|0.86|0.78",
+  "family": "adaptive_card_testing",
+  "campaign_events": 12,
+  "detected_events": 11,
+  "missed_events": 1,
+  "approved_value": 8.936488550668647,
+  "base_calibrated_threshold": 0.13589219367500718,
+  "missed_event_amounts": [
+    8.936488550668647
+  ],
+  "missed_event_scores": [
+    0.17628237186074783
+  ],
+  "missed_event_operational_thresholds": [
+    0.1793776956510095
+  ],
+  "missed_event_score_margins": [
+    -0.0030953237902616726
+  ],
+  "missed_event_steps": [
+    0
+  ]
+}

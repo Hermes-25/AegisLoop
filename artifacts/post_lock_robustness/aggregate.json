@@ -1,0 +1,44 @@
+{
+  "artifact_version": "1.0",
+  "source_revision": "c37586b15d2205c9495881778827d39c3444e7bd",
+  "defender_seeds": [20260812, 20260813, 20260814, 20260815, 20260816],
+  "search_families": [
+    "adaptive_card_testing",
+    "ai_app_scam_mule",
+    "deepfake_account_takeover",
+    "synthetic_identity_bustout",
+    "agentic_intent_hijack",
+    "fake_merchant_collusion"
+  ],
+  "conditions": {
+    "double_search_pressure": {
+      "runs": 5,
+      "defender_seeds": 5,
+      "campaigns": 720,
+      "valid_campaigns": 720,
+      "fully_detected_campaigns": 719,
+      "approved_value": 8.936488550668647,
+      "mean_detection_rate": 0.9998842592592592,
+      "mean_reward": -0.17333233936888312,
+      "mean_fidelity": 0.915452804590332,
+      "min_fidelity": 0.8180096572021512,
+      "runs_with_nonzero_approved_value": 1,
+      "seeds_with_nonzero_approved_value": 1
+    },
+    "independent_pool": {
+      "runs": 15,
+      "defender_seeds": 5,
+      "campaigns": 1080,
+      "valid_campaigns": 1080,
+      "fully_detected_campaigns": 1080,
+      "approved_value": 0.0,
+      "mean_detection_rate": 1.0,
+      "mean_reward": -0.17483088159287488,
+      "mean_fidelity": 0.9201625346993411,
+      "min_fidelity": 0.8155330399064411,
+      "runs_with_nonzero_approved_value": 0,
+      "seeds_with_nonzero_approved_value": 0
+    }
+  },
+  "interpretation_boundary": "Offline synthetic robustness tests within the configured bounded action distribution; not evidence of universal protection against open-ended future attackers."
+}

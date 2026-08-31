@@ -89,6 +89,12 @@ Every headline below is loaded from a versioned artifact. No single seed is prom
   <a href="./artifacts/precomputed/prevalence_metrics.csv"><code>prevalence_metrics.csv</code></a>.
 </p>
 
+### Post-lock robustness audit
+
+After the primary paper and seven-artifact evidence set were locked, V2 was tested against independently regenerated bounded action pools. Across three pools per defender seed (**15 runs; 1,080 campaigns**), all 1,080 campaigns passed the fidelity firewall and were fully detected, with zero approved synthetic value. Under doubled candidate density and doubled search budget, V2 fully detected **719 of 720 campaigns**; one `adaptive_card_testing` event worth **8.936489 synthetic units** scored **0.003095** below its event-specific threshold.
+
+This supplementary result strengthens the matched-pool evidence while establishing an honest non-zero boundary. It remains an offline synthetic test inside the configured action distribution—not evidence of universal protection against open-ended future attackers. Read the [methodology and interpretation](./docs/POST_LOCK_ROBUSTNESS.md), inspect the [aggregate summary](./artifacts/post_lock_robustness/aggregate.json), or audit all [20 per-run records](./artifacts/post_lock_robustness/run_summary.csv).
+
 ### Adaptive search and defender hardening
 
 <table>
@@ -183,6 +189,7 @@ python -m venv .venv
 python -m pip install -r requirements-dev.txt
 python -m pytest -q
 python experiments/run_multiseed.py --output artifacts/reproduction_full
+python experiments/run_post_lock_robustness.py --output artifacts/reproduction_post_lock
 python scripts/make_figures.py
 ```
 
@@ -218,6 +225,8 @@ The web UI fails closed when an approved artifact is absent or malformed. Charts
 | [`representative_campaign.json`](./artifacts/precomputed/representative_campaign.json) | Deterministically generated stateful, chronological, entity-linked campaign rollout |
 
 </details>
+
+The [post-lock robustness evidence](./docs/POST_LOCK_ROBUSTNESS.md) is a separately labeled supplement to this original seven-artifact ledger; it does not rewrite the paper's matched-pool claim or its interpretation boundary.
 
 ## Repository map
 

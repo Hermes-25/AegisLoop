@@ -1,0 +1,2 @@
+iteration,strategy,action_id,family,reward,fidelity,valid,approved_value,detection_rate,mean_risk_score,event_count,novel_evasion,value_term,evasion_term,detection_cost_term,resource_cost_term,novelty_term,validity_term,pre_fidelity_reward
+126,v2_double_search_pressure_diagnostic,adaptive_card_testing|1.14|1.98|0.26|0.07|0.98|0.86|0.78,adaptive_card_testing,0.2467689410964728,0.9888967435005751,True,8.936488550668647,0.9166666666666666,0.8237499964954812,12,True,0.017872977101337294,0.20833333333333343,-0.14666666666666667,-0.03,0.2,0.0,0.24953964376800405
